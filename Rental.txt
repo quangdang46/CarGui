@@ -1,0 +1,2 @@
+ECar1_Car 1_500_Economy Car,Dang_1233,01/12/2022,12
+ECar2_Car 2_900_Economy Car,Hong_12332,10/12/2022,12
