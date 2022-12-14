@@ -117,9 +117,9 @@ public class Main extends javax.swing.JFrame {
 		/////////////////////////
 		this.models = new Models();
 		this.controller = new Controller();
-		controller.handleReadCars("./Cars.txt");
-		controller.handleReadRental("./Rental.txt");
+		controller.init();
 
+		////////////////////
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
 						{ null, null, null, null },
@@ -156,12 +156,12 @@ public class Main extends javax.swing.JFrame {
 				new Object[][] {
 				},
 				new String[] {
-						"Loại", "Mã xe", "Tên xe", "Chi tiết xe"
+						"Mã xe", "Biển số", "Chi tiết xe"
 				}));
 
 		jTable5.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		for (Object car : controller.getList()) {
-			models.addCarToTable(jTable5, (Car) car);
+		for (Object car : controller.listCars) {
+			controller.addCarToTable(jTable5, (Car) car);
 		}
 		jTable5.setName("listXeCoSan"); // NOI18N
 		jScrollPane5.setViewportView(jTable5);
@@ -200,11 +200,11 @@ public class Main extends javax.swing.JFrame {
 
 				},
 				new String[] {
-						"Mã xe", "Loại xe", "Tên xe", "Chi tiết xe"
+						"Mã xe", "Biển số", "Chi tiết xe"
 				}));
 		jTable6.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		for (Object car : controller.getListRental()) {
-			models.addCarToTable(jTable6, (Car) car);
+		for (Object car : controller.listRental) {
+			controller.addCarToTable(jTable6, (Car) car);
 		}
 		jTable6.setName("listXe"); // NOI18N
 		jScrollPane6.setViewportView(jTable6);
@@ -1038,6 +1038,7 @@ public class Main extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton4ActionPerformed
 
 	private void resetForm() {
+		controller.init();
 		jTextField1.setText("");
 		jTextField2.setText("");
 		jDateChooser1.setDate(null);
@@ -1049,11 +1050,11 @@ public class Main extends javax.swing.JFrame {
 		model.setRowCount(0);
 		model2.setRowCount(0);
 		// add data
-		for (Object obj : controller.getList()) {
-			models.addCarToTable(jTable5, (Car) obj);
+		for (Object obj : controller.listCars) {
+			controller.addCarToTable(jTable5, (Car) obj);
 		}
-		for (Object obj : controller.getListRental()) {
-			models.addCarToTable(jTable6, (Car) obj);
+		for (Object obj : controller.listRental) {
+			controller.addCarToTable(jTable6, (Car) obj);
 		}
 	}
 
@@ -1086,9 +1087,9 @@ public class Main extends javax.swing.JFrame {
 		}
 		Customer customer = new Customer(nameCustomer, phoneCustomer);
 
-		controller.reservation(customer, data,
-				date, Integer.parseInt(timeRental), "./Cars.txt",
-				"./Rental.txt");
+		// controller.reservation(customer, data,
+		// date, Integer.parseInt(timeRental), "./Cars.txt",
+		// "./Rental.txt");
 		JOptionPane.showMessageDialog(null, "Bạn đã đặt phòng thành công");
 		jLabel12.setText("Bạn đã đặt phòng thành công");
 		resetForm();

@@ -7,10 +7,10 @@ public class Rental {
   private Object car;
   private Customer customer;
   private Date startDate;
-  private int timeRental;
+  private String timeRental;
   private SimpleDateFormat simpleDateFormat;
 
-  public Rental(Object car, Customer customer, Date startDate, int timeRental) {
+  public Rental(Object car, Customer customer, Date startDate, String timeRental) {
     this.car = car;
     this.customer = customer;
     this.startDate = startDate;
@@ -42,11 +42,11 @@ public class Rental {
     this.startDate = startDate;
   }
 
-  public int getTimeRental() {
+  public String getTimeRental() {
     return timeRental;
   }
 
-  public void setTimeRental(int timeRental) {
+  public void setTimeRental(String timeRental) {
     this.timeRental = timeRental;
   }
 
