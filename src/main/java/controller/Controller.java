@@ -32,19 +32,29 @@ public class Controller {
     model.addRow(new Object[] { car.getId(), car.getName(), car.getCapacity() });
   }
 
-  public void deleteId(String id) {
-    for (int i = 0; i < listCars.size(); i++) {
-      Car car = (Car) listCars.get(i);
+  public void deleteId(ArrayList<Object> list, String id) {
+    for (int i = 0; i < list.size(); i++) {
+      Car car = (Car) list.get(i);
       if (car.getId().equals(id)) {
-        listCars.remove(i);
+        list.remove(i);
         break;
       }
     }
   }
 
+  public Object findCar(ArrayList<Object> list, String id) {
+    for (int i = 0; i < list.size(); i++) {
+      Car car = (Car) list.get(i);
+      if (car.getId().equals(id)) {
+        return car;
+      }
+    }
+    return null;
+  }
+
   public void reservation(Rental rental) throws Exception {
     listRental.add(rental);
-    deleteId(((Car) rental.getCar()).getId());
+    deleteId(listCars, ((Car) rental.getCar()).getId());
     model.writeFile(listRental, "./Rental.txt", false);
     model.writeFile(listCars, "./Cars.txt", false);
   }

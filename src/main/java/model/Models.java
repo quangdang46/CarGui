@@ -84,8 +84,10 @@ public class Models {
           date = new SimpleDateFormat("dd/MM/yyyy").parse(stringDate);
         } catch (ParseException e) {
           e.printStackTrace();
+          System.err.println("Loi 1");
         } catch (Exception e) {
           System.out.println(e);
+          System.err.println("Loi 2");
         }
         list.add(new Rental(car, customer, date, timeRental));
 

@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import model.*;
 import controller.*;
+
+import java.io.IOException;
 import java.text.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -42,8 +44,8 @@ public class Main extends javax.swing.JFrame {
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents
-
 	private void initComponents() {
 
 		jScrollPane1 = new javax.swing.JScrollPane();
@@ -401,7 +403,6 @@ public class Main extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				try {
 					jButton2ActionPerformed(evt);
-
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -634,6 +635,10 @@ public class Main extends javax.swing.JFrame {
 
 		jTable9.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
+						{ null, null, null, null },
+						{ null, null, null, null },
+						{ null, null, null, null },
+						{ null, null, null, null }
 				},
 				new String[] {
 						"Mã xe", "Loại xe", "Tên xe", "Chi tiết xe"
@@ -1090,6 +1095,8 @@ public class Main extends javax.swing.JFrame {
 			JOptionPane.showMessageDialog(null, "Bạn chưa chọn xe");
 			return;
 		}
+		jTable5.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		jTable6.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		ArrayList<String> data = new ArrayList<String>();
 		for (int i = 0; i < rows.length; i++) {
 			data.add(jTable5.getValueAt(rows[i], 0).toString());
@@ -1111,7 +1118,15 @@ public class Main extends javax.swing.JFrame {
 			return;
 		}
 		Customer customer = new Customer(nameCustomer, phoneCustomer);
-
+		try {
+			for (String id : data) {
+				Object car = controller.findCar(controller.listCars, id);
+				Rental rental = new Rental(car, customer, date, timeRental);
+				controller.reservation(rental);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		JOptionPane.showMessageDialog(null, "Bạn đã đặt phòng thành công");
 		jLabel12.setText("Bạn đã đặt phòng thành công");
 		resetForm();
