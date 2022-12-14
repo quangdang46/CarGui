@@ -26,6 +26,8 @@ public class Main extends javax.swing.JFrame {
 
 	public Main() {
 		initComponents();
+		init();
+		initData();
 	}
 
 	/**
@@ -39,7 +41,9 @@ public class Main extends javax.swing.JFrame {
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents
+
 	private void initComponents() {
 
 		jScrollPane1 = new javax.swing.JScrollPane();
@@ -114,12 +118,7 @@ public class Main extends javax.swing.JFrame {
 		jLabel24 = new javax.swing.JLabel();
 		jPanel1 = new javax.swing.JPanel();
 		jButton1 = new javax.swing.JButton();
-		/////////////////////////
-		this.models = new Models();
-		this.controller = new Controller();
-		controller.init();
 
-		////////////////////
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
 						{ null, null, null, null },
@@ -154,15 +153,22 @@ public class Main extends javax.swing.JFrame {
 
 		jTable5.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
+						{ null, null, null, null },
+						{ null, null, null, null },
+						{ null, null, null, null },
+						{ null, null, null, null }
 				},
 				new String[] {
-						"Mã xe", "Biển số", "Chi tiết xe"
-				}));
+						"Loại", "Mã xe", "Tên xe", "Chi tiết xe"
+				}) {
+			Class[] types = new Class[] {
+					java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+			};
 
-		jTable5.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		for (Object car : controller.listCars) {
-			controller.addCarToTable(jTable5, (Car) car);
-		}
+			public Class getColumnClass(int columnIndex) {
+				return types[columnIndex];
+			}
+		});
 		jTable5.setName("listXeCoSan"); // NOI18N
 		jScrollPane5.setViewportView(jTable5);
 
@@ -197,15 +203,22 @@ public class Main extends javax.swing.JFrame {
 
 		jTable6.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-
+						{ null, null, null, null },
+						{ null, null, null, null },
+						{ null, null, null, null },
+						{ null, null, null, null }
 				},
 				new String[] {
-						"Mã xe", "Biển số", "Chi tiết xe"
-				}));
-		jTable6.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		for (Object car : controller.listRental) {
-			controller.addCarToTable(jTable6, (Car) car);
-		}
+						"Mã xe", "Loại xe", "Tên xe", "Chi tiết xe"
+				}) {
+			Class[] types = new Class[] {
+					java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+			};
+
+			public Class getColumnClass(int columnIndex) {
+				return types[columnIndex];
+			}
+		});
 		jTable6.setName("listXe"); // NOI18N
 		jScrollPane6.setViewportView(jTable6);
 
@@ -391,7 +404,6 @@ public class Main extends javax.swing.JFrame {
 
 				} catch (Exception e) {
 					// TODO: handle exception
-					System.out.println(e);
 				}
 			}
 		});
@@ -622,10 +634,6 @@ public class Main extends javax.swing.JFrame {
 
 		jTable9.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null }
 				},
 				new String[] {
 						"Mã xe", "Loại xe", "Tên xe", "Chi tiết xe"
@@ -1037,6 +1045,23 @@ public class Main extends javax.swing.JFrame {
 		// TODO add your handling code here:
 	}// GEN-LAST:event_jButton4ActionPerformed
 
+	public void init() {
+		this.models = new Models();
+		this.controller = new Controller();
+		controller.init();
+	}
+
+	public void initData() {
+		jTable5.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		jTable6.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		for (Object object : controller.listCars) {
+			controller.addCarToTable(jTable5, (Car) object);
+		}
+		for (Object object : controller.listRental) {
+			controller.addCarToTable(jTable6, (Car) object);
+		}
+	}
+
 	private void resetForm() {
 		controller.init();
 		jTextField1.setText("");
@@ -1065,11 +1090,11 @@ public class Main extends javax.swing.JFrame {
 			JOptionPane.showMessageDialog(null, "Bạn chưa chọn xe");
 			return;
 		}
-		ArrayList<Object> data = new ArrayList<Object>();
+		ArrayList<String> data = new ArrayList<String>();
 		for (int i = 0; i < rows.length; i++) {
 			data.add(jTable5.getValueAt(rows[i], 0).toString());
 		}
-
+		System.out.println(data);
 		String nameCustomer = jTextField1.getText();
 		String phoneCustomer = jTextField2.getText();
 		String dateCustomer = String.valueOf(jDateChooser1.getDate());
