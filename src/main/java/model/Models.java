@@ -94,4 +94,19 @@ public class Models {
       System.out.println(e);
     }
   }
+
+  public void writeFile(ArrayList<Object> list, String path, boolean isContinue) throws Exception {
+    try {
+      File file = new File(path);
+      FileWriter fileWriter = new FileWriter(file, isContinue);
+      BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+      for (Object obj : list) {
+        bufferedWriter.write(obj.toString());
+        bufferedWriter.newLine();
+      }
+      bufferedWriter.close();
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+  }
 }

@@ -1087,9 +1087,6 @@ public class Main extends javax.swing.JFrame {
 		}
 		Customer customer = new Customer(nameCustomer, phoneCustomer);
 
-		// controller.reservation(customer, data,
-		// date, Integer.parseInt(timeRental), "./Cars.txt",
-		// "./Rental.txt");
 		JOptionPane.showMessageDialog(null, "Bạn đã đặt phòng thành công");
 		jLabel12.setText("Bạn đã đặt phòng thành công");
 		resetForm();
