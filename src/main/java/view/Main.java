@@ -1036,6 +1036,10 @@ public class Main extends javax.swing.JFrame {
 	}// GEN-LAST:event_jTextField6ActionPerformed
 
 	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton5ActionPerformed
+		if (controller.listRental.size() == 0) {
+			jButton5.setEnabled(false);
+			return;
+		}
 		// dialog yes no ban co muon thue khong
 		int dialogResult = JOptionPane.showConfirmDialog(this, "Bạn có muốn thuê không?");
 		if (dialogResult == JOptionPane.YES_OPTION) {
@@ -1061,6 +1065,10 @@ public class Main extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton5ActionPerformed
 
 	private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton7ActionPerformed
+		if (controller.listReceive.size() == 0) {
+			jButton7.setEnabled(false);
+			return;
+		}
 		int dialogResult = JOptionPane.showConfirmDialog(this, "Bạn có muốn huỷ thuê không?");
 		if (dialogResult == JOptionPane.YES_OPTION) {
 			int[] rows = jTable9.getSelectedRows();
@@ -1073,12 +1081,15 @@ public class Main extends javax.swing.JFrame {
 			} catch (Exception e) {
 				// TODO: handle exception
 				JOptionPane.showMessageDialog(this, "Lỗi");
+				return;
 			}
 			// yes option
 			JOptionPane.showMessageDialog(this, "Bạn đã huỷ thuê thành công");
 		} else {
 			// no option
 			JOptionPane.showMessageDialog(this, "Bạn đã hủy thuê");
+			return;
+
 		}
 		resetForm();
 	}// GEN-LAST:event_jButton7ActionPerformed
@@ -1088,6 +1099,10 @@ public class Main extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton1ActionPerformed
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
+		if (controller.listRental.size() == 0) {
+			jButton3.setEnabled(false);
+			return;
+		}
 		int dialogResult = JOptionPane.showConfirmDialog(null, "Bạn có muốn trả xe không");
 		if (dialogResult == JOptionPane.YES_OPTION) {
 			int[] rows = jTable2.getSelectedRows();
@@ -1102,9 +1117,13 @@ public class Main extends javax.swing.JFrame {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				return;
+
 			}
 		} else {
 			JOptionPane.showMessageDialog(null, "Ban da huy tra xe");
+			return;
+
 		}
 		resetForm();
 
@@ -1197,6 +1216,10 @@ public class Main extends javax.swing.JFrame {
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws ParseException {// GEN-FIRST:event_jButton2ActionPerformed
+		if (controller.listCars.size() == 0) {
+			jButton2.setEnabled(false);
+			return;
+		}
 		// get multiple data select from jTable5
 		int[] rows = jTable5.getSelectedRows();
 		if (rows.length == 0) {
@@ -1237,6 +1260,8 @@ public class Main extends javax.swing.JFrame {
 			controller.reservation(rental, car);
 		} catch (Exception e) {
 			// TODO: handle exception
+			return;
+
 		}
 		JOptionPane.showMessageDialog(null, "Dan da dat truoc thanh cong");
 		jLabel12.setText("Ban da dat thanh cong");
