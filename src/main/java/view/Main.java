@@ -999,7 +999,17 @@ public class Main extends javax.swing.JFrame {
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton6ActionPerformed
-		// TODO add your handling code here:
+		int[] rows = jTable7.getSelectedRows();
+		if (rows.length == 0) {
+			JOptionPane.showMessageDialog(this, "Bạn chưa chọn phòng");
+		}
+		String idSelected = jTable7.getValueAt(rows[0], 0).toString();
+		Rental rental = controller.findRental(idSelected);
+		jLabel6.setText(rental.getName());
+		jLabel25.setText(rental.getPhone());
+		jLabel27.setText(rental.getStartDate().toString());
+		jLabel26.setText(rental.getTimeRental());
+
 	}// GEN-LAST:event_jButton6ActionPerformed
 
 	private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextField4ActionPerformed
@@ -1020,28 +1030,22 @@ public class Main extends javax.swing.JFrame {
 		if (dialogResult == JOptionPane.YES_OPTION) {
 			int[] rows = jTable7.getSelectedRows();
 			if (rows.length == 0) {
-				JOptionPane.showMessageDialog(this, "Bạn chưa chọn phòng");
+				JOptionPane.showMessageDialog(this, "Bạn chưa chọn xe");
 			}
 			String idSelected = jTable7.getValueAt(rows[0], 0).toString();
-			Rental rental = controller.findRental(idSelected);
-			System.out.println(rental);
-			jTable7.addMouseListener(new MouseAdapter() {
-				public void mouseClicked(MouseEvent e) {
-					if (e.getClickCount() == 1) {
-						jLabel6.setText(rental.getName());
-						jLabel25.setText(rental.getPhone());
-						jLabel27.setText(rental.getStartDate().toString());
-						jLabel26.setText(rental.getTimeRental());
-					}
-				}
-			});
-
+			try {
+				controller.receiveRental(idSelected);
+			} catch (Exception e) {
+				// TODO: handle exception
+				JOptionPane.showMessageDialog(this, "Lỗi");
+			}
 			// yes option
 			JOptionPane.showMessageDialog(this, "Bạn đã thuê thành công");
 		} else {
 			// no option
 			JOptionPane.showMessageDialog(this, "Bạn đã hủy thuê");
 		}
+		resetForm();
 
 	}// GEN-LAST:event_jButton5ActionPerformed
 
@@ -1090,7 +1094,7 @@ public class Main extends javax.swing.JFrame {
 		DefaultTableModel model2 = (DefaultTableModel) jTable6.getModel();
 		DefaultTableModel model3 = (DefaultTableModel) jTable2.getModel();
 		DefaultTableModel model4 = (DefaultTableModel) jTable7.getModel();
-		DefaultTableModel model5 = (DefaultTableModel) jTable6.getModel();
+		DefaultTableModel model5 = (DefaultTableModel) jTable9.getModel();
 		model.setRowCount(0);
 		model2.setRowCount(0);
 		model3.setRowCount(0);
@@ -1100,7 +1104,7 @@ public class Main extends javax.swing.JFrame {
 		jTable6.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		jTable2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		jTable7.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		jTable6.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		jTable9.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		for (Object object : controller.listCars) {
 			controller.addCarToTable(jTable5, (Car) object);
 		}
@@ -1112,6 +1116,9 @@ public class Main extends javax.swing.JFrame {
 		}
 		for (Object object : controller.listRental) {
 			controller.addCarToTable(jTable7, (Car) object);
+		}
+		for (Object object : controller.listReceive) {
+			controller.addCustomer(jTable9, (Rental) object);
 		}
 
 	}
@@ -1133,7 +1140,7 @@ public class Main extends javax.swing.JFrame {
 		DefaultTableModel model2 = (DefaultTableModel) jTable6.getModel();
 		DefaultTableModel model3 = (DefaultTableModel) jTable2.getModel();
 		DefaultTableModel model4 = (DefaultTableModel) jTable7.getModel();
-		DefaultTableModel model5 = (DefaultTableModel) jTable6.getModel();
+		DefaultTableModel model5 = (DefaultTableModel) jTable9.getModel();
 		model.setRowCount(0);
 		model2.setRowCount(0);
 		model3.setRowCount(0);
@@ -1152,6 +1159,9 @@ public class Main extends javax.swing.JFrame {
 		}
 		for (Object object : controller.listRental) {
 			controller.addCarToTable(jTable7, (Car) object);
+		}
+		for (Object object : controller.listReceive) {
+			controller.addCustomer(jTable9, (Rental) object);
 		}
 	}
 

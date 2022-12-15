@@ -44,9 +44,9 @@ public class Models {
     }
   }
 
-  public void initListRentalCustomer(ArrayList<Object> list) {
+  public void initListRentalCustomer(ArrayList<Object> list, String path) {
     try {
-      File file = new File("./Rental.txt");
+      File file = new File(path);
       Scanner sc = new Scanner(file);
       while (sc.hasNextLine()) {
         String line = sc.nextLine();

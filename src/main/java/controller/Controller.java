@@ -12,12 +12,14 @@ public class Controller {
   public ArrayList<Object> listCars;
   public ArrayList<Object> listRental;
   public ArrayList<Object> listRentalCustomers;
+  public ArrayList<Object> listReceive;
   private Models model;
 
   public Controller() {
     listCars = new ArrayList<Object>();
     listRental = new ArrayList<Object>();
     listRentalCustomers = new ArrayList<Object>();
+    listReceive = new ArrayList<Object>();
     model = new Models();
   }
 
@@ -27,7 +29,8 @@ public class Controller {
     listRentalCustomers.clear();
     model.initCars(listCars, "./Cars.txt");
     model.initCars(listRental, "./Rental.txt");
-    model.initListRentalCustomer(listRentalCustomers);
+    model.initListRentalCustomer(listRentalCustomers, "./Rental.txt");
+    model.initListRentalCustomer(listReceive, "./Receive.txt");
   }
 
   public void addCarToTable(JTable table, Car car) {
@@ -101,4 +104,12 @@ public class Controller {
     model.writeFile(listCars, "./Cars.txt", false);
   }
 
+  public void receiveRental(String id) throws Exception {
+    Rental rental = findRental(id);
+    deleteRental(id);
+    deleteId(listRental, id);
+    listReceive.add(rental);
+    model.writeFile(listRentalCustomers, "./Rental.txt", false);
+    model.writeFile(listReceive, "./Receive.txt", false);
+  }
 }
