@@ -35,9 +35,19 @@ public class Controller {
     model.addRow(new Object[] { car.getId(), car.getName(), car.getCapacity() });
   }
 
+  public void addCustomer(JTable table, Rental rental) {
+    DefaultTableModel model = (DefaultTableModel) table.getModel();
+    model.addRow(new Object[] {
+        rental.getId(), rental.getName(), rental.getCapacity(), rental.getStartDate(), rental.getTimeRental(),
+        rental.getNameCustomer(), rental.getPhone()
+
+    });
+  }
+
   public void deleteId(ArrayList<Object> list, String id) {
     for (int i = 0; i < list.size(); i++) {
       Car car = (Car) list.get(i);
+      System.out.println(car.getId());
       if (car.getId().equals(id)) {
         list.remove(i);
         break;

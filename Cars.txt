@@ -1,8 +1,6 @@
-Car1_HK13123123_900_Economy Car
+Car1_asdasdad_500_Economy Car
 Car2_JH23131312_1500_Small Car
 Car3_HK1313211_2500_Premium Car
-Car4_KAH2131333_3500_Luxury Car
-Suv1_JUY319913_60_Economy Suv
 Suv2_KJH3123131_160_Small Suv
 Suv3_KJH31321331_260_Premium Car
 Suv4_KJH3331_360_Luxury Car

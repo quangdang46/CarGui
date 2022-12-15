@@ -18,6 +18,26 @@ public class Rental {
     this.simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
   }
 
+  public String getPhone() {
+    return customer.getPhone();
+  }
+
+  public String getNameCustomer() {
+    return customer.getName();
+  }
+
+  public String getId() {
+    return ((Car) car).getId();
+  }
+
+  public String getName() {
+    return ((Car) car).getName();
+  }
+
+  public String getCapacity() {
+    return ((Car) car).getCapacity();
+  }
+
   public Object getCar() {
     return car;
   }

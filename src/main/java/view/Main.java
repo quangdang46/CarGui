@@ -1063,15 +1063,21 @@ public class Main extends javax.swing.JFrame {
 	public void initData() {
 		DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
 		DefaultTableModel model2 = (DefaultTableModel) jTable6.getModel();
+		DefaultTableModel model3 = (DefaultTableModel) jTable2.getModel();
 		model.setRowCount(0);
 		model2.setRowCount(0);
+		model3.setRowCount(0);
 		jTable5.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		jTable6.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		jTable2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		for (Object object : controller.listCars) {
 			controller.addCarToTable(jTable5, (Car) object);
 		}
 		for (Object object : controller.listRental) {
 			controller.addCarToTable(jTable6, (Car) object);
+		}
+		for (Object obj : controller.listRentalCustomers) {
+			controller.addCustomer(jTable2, (Rental) obj);
 		}
 	}
 
@@ -1085,8 +1091,10 @@ public class Main extends javax.swing.JFrame {
 		// clear data
 		DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
 		DefaultTableModel model2 = (DefaultTableModel) jTable6.getModel();
+		DefaultTableModel model3 = (DefaultTableModel) jTable2.getModel();
 		model.setRowCount(0);
 		model2.setRowCount(0);
+		model3.setRowCount(0);
 		controller.init();
 		// add data
 		for (Object obj : controller.listCars) {
@@ -1094,6 +1102,9 @@ public class Main extends javax.swing.JFrame {
 		}
 		for (Object obj : controller.listRental) {
 			controller.addCarToTable(jTable6, (Car) obj);
+		}
+		for (Object obj : controller.listRentalCustomers) {
+			controller.addCustomer(jTable2, (Rental) obj);
 		}
 	}
 

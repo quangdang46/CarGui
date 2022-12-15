@@ -54,8 +54,10 @@ public class Models {
         String idCar = arr[0];
         String nameCar = arr[1];
         String capacity = arr[2];
+        String classname = arr[0].toUpperCase().replaceAll("\\d", "");
         Object car = null;
-        switch (idCar.toUpperCase().replaceAll("//d", "")) {
+        System.out.println(classname);
+        switch (classname) {
           case "CAR":
             car = new Carx(idCar, nameCar, capacity);
             break;
