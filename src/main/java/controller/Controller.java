@@ -48,6 +48,13 @@ public class Controller {
     });
   }
 
+  public void addCarCustomer(JTable table, Rental rental) {
+    DefaultTableModel model = (DefaultTableModel) table.getModel();
+    model.addRow(new Object[] {
+        rental.getId(), rental.getName(), rental.getCapacity()
+    });
+  }
+
   public void deleteId(ArrayList<Object> list, String id) {
     for (int i = 0; i < list.size(); i++) {
       Car car = (Car) list.get(i);
@@ -68,18 +75,18 @@ public class Controller {
     return null;
   }
 
-  public void deleteRental(String id) {
-    for (int i = 0; i < listRentalCustomers.size(); i++) {
-      Rental rental = (Rental) listRentalCustomers.get(i);
+  public void deleteRental(String id, ArrayList<Object> list) {
+    for (int i = 0; i < list.size(); i++) {
+      Rental rental = (Rental) list.get(i);
       if (rental.getId().equals(id)) {
-        listRentalCustomers.remove(i);
+        list.remove(i);
         break;
       }
     }
   }
 
-  public Rental findRental(String id) {
-    for (Object obj : listRentalCustomers) {
+  public Rental findRental(String id, ArrayList<Object> list) {
+    for (Object obj : list) {
       Rental rental = (Rental) obj;
       if (rental.getId().equals(id)) {
         return rental;
@@ -99,17 +106,27 @@ public class Controller {
   public void returnCar(String id) throws Exception {
     Object car = findCar(listRental, id);
     listCars.add(car);
-    deleteRental(id);
+    deleteRental(id, listRentalCustomers);
     deleteId(listRental, id);
     model.writeFile(listRentalCustomers, "./Rental.txt", false);
     model.writeFile(listCars, "./Cars.txt", false);
   }
 
   public void receiveRental(String id) throws Exception {
-    Rental rental = findRental(id);
-    deleteRental(id);
+    Rental rental = findRental(id, listRentalCustomers);
+    rental.setStartDate(new Date());
+    deleteRental(id, listRentalCustomers);
     deleteId(listRental, id);
     listReceive.add(rental);
+    model.writeFile(listRentalCustomers, "./Rental.txt", false);
+    model.writeFile(listReceive, "./Receive.txt", false);
+  }
+
+  public void returnReceive(String id) throws Exception {
+    Rental rental = findRental(id, listReceive);
+    deleteRental(id, listReceive);
+    listRentalCustomers.add(rental);
+    listRental.add(findCar(listCars, id));
     model.writeFile(listRentalCustomers, "./Rental.txt", false);
     model.writeFile(listReceive, "./Receive.txt", false);
   }

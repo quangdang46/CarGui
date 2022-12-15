@@ -590,13 +590,9 @@ public class Main extends javax.swing.JFrame {
 
 		jTable7.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null }
 				},
 				new String[] {
-						"Loai", "Ma xe", "Ten xe", "Chi tiet xe"
+						"Loai", "Ma xe", "Ten xe"
 				}));
 		jTable7.setName("listXeCoSan"); // NOI18N
 		jScrollPane7.setViewportView(jTable7);
@@ -631,13 +627,10 @@ public class Main extends javax.swing.JFrame {
 
 		jTable9.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null }
+
 				},
 				new String[] {
-						"Ma xe", "Loai xe", "Ten xe", "Chi tiet xe"
+						"Ma xe", "Loai xe", "Ten xe"
 				}));
 		jTable9.setName("listXe"); // NOI18N
 		jScrollPane9.setViewportView(jTable9);
@@ -1000,15 +993,33 @@ public class Main extends javax.swing.JFrame {
 
 	private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton6ActionPerformed
 		int[] rows = jTable7.getSelectedRows();
-		if (rows.length == 0) {
-			JOptionPane.showMessageDialog(this, "Bạn chưa chọn phòng");
+		int[] rows2 = jTable9.getSelectedRows();
+
+		if (rows.length == 0 && rows2.length == 0) {
+			JOptionPane.showMessageDialog(this, "Bạn chưa chọn bảng");
 		}
-		String idSelected = jTable7.getValueAt(rows[0], 0).toString();
-		Rental rental = controller.findRental(idSelected);
+		if (rows.length != 0 && rows2.length != 0) {
+			JOptionPane.showMessageDialog(this, "Bạn chỉ được chọn 1 bảng");
+		}
+		String isSelected = "";
+		Rental rental = null;
+		if (rows.length != 0) {
+			isSelected = jTable7.getValueAt(rows[0], 0).toString();
+			rental = controller.findRental(isSelected, controller.listRentalCustomers);
+		} else {
+			isSelected = jTable9.getValueAt(rows2[0], 0).toString();
+			rental = controller.findRental(isSelected, controller.listReceive);
+		}
+		System.out.println(isSelected);
+		// String idSelected = jTable7.getValueAt(rows[0], 0).toString();
+
+		// Rental rental = controller.findRental(isSelected,
+		// controller.listRentalCustomers);
 		jLabel6.setText(rental.getNameCustomer());
 		jLabel25.setText(rental.getPhone());
 		jLabel27.setText(rental.getStartDate().toString());
 		jLabel26.setText(rental.getTimeRental());
+		JOptionPane.showMessageDialog(this, "Bạn đã chọn Xe " + isSelected);
 
 	}// GEN-LAST:event_jButton6ActionPerformed
 
@@ -1050,7 +1061,26 @@ public class Main extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton5ActionPerformed
 
 	private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton7ActionPerformed
-		// TODO add your handling code here:
+		int dialogResult = JOptionPane.showConfirmDialog(this, "Bạn có muốn huỷ thuê không?");
+		if (dialogResult == JOptionPane.YES_OPTION) {
+			int[] rows = jTable9.getSelectedRows();
+			if (rows.length == 0) {
+				JOptionPane.showMessageDialog(this, "Bạn chưa chọn xe");
+			}
+			String idSelected = jTable9.getValueAt(rows[0], 0).toString();
+			try {
+				controller.returnReceive(idSelected);
+			} catch (Exception e) {
+				// TODO: handle exception
+				JOptionPane.showMessageDialog(this, "Lỗi");
+			}
+			// yes option
+			JOptionPane.showMessageDialog(this, "Bạn đã huỷ thuê thành công");
+		} else {
+			// no option
+			JOptionPane.showMessageDialog(this, "Bạn đã hủy thuê");
+		}
+		resetForm();
 	}// GEN-LAST:event_jButton7ActionPerformed
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
@@ -1114,11 +1144,12 @@ public class Main extends javax.swing.JFrame {
 		for (Object obj : controller.listRentalCustomers) {
 			controller.addCustomer(jTable2, (Rental) obj);
 		}
+
 		for (Object object : controller.listRental) {
 			controller.addCarToTable(jTable7, (Car) object);
 		}
 		for (Object object : controller.listReceive) {
-			controller.addCustomer(jTable9, (Rental) object);
+			controller.addCarCustomer(jTable9, (Rental) object);
 		}
 
 	}
