@@ -67,12 +67,21 @@ public class Controller {
   public void deleteRental(String id) {
     for (int i = 0; i < listRentalCustomers.size(); i++) {
       Rental rental = (Rental) listRentalCustomers.get(i);
-      System.out.println(rental.getId());
       if (rental.getId().equals(id)) {
         listRentalCustomers.remove(i);
         break;
       }
     }
+  }
+
+  public Rental findRental(String id) {
+    for (Object obj : listRentalCustomers) {
+      Rental rental = (Rental) obj;
+      if (rental.getId().equals(id)) {
+        return rental;
+      }
+    }
+    return null;
   }
 
   public void reservation(Rental rental, Object car) throws Exception {
@@ -88,7 +97,7 @@ public class Controller {
     listCars.add(car);
     deleteRental(id);
     deleteId(listRental, id);
-    model.writeFile(listRentalCustomers, "./Rental.txt", true);
+    model.writeFile(listRentalCustomers, "./Rental.txt", false);
     model.writeFile(listCars, "./Cars.txt", false);
   }
 
