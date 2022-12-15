@@ -27,6 +27,7 @@ public class Controller {
     listRental.clear();
     listCars.clear();
     listRentalCustomers.clear();
+    listReceive.clear();
     model.initCars(listCars, "./Cars.txt");
     model.initCars(listRental, "./Rental.txt");
     model.initListRentalCustomer(listRentalCustomers, "./Rental.txt");

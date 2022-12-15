@@ -1005,7 +1005,7 @@ public class Main extends javax.swing.JFrame {
 		}
 		String idSelected = jTable7.getValueAt(rows[0], 0).toString();
 		Rental rental = controller.findRental(idSelected);
-		jLabel6.setText(rental.getName());
+		jLabel6.setText(rental.getNameCustomer());
 		jLabel25.setText(rental.getPhone());
 		jLabel27.setText(rental.getStartDate().toString());
 		jLabel26.setText(rental.getTimeRental());
