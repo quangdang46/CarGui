@@ -45,6 +45,8 @@ public class Main extends javax.swing.JFrame {
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
@@ -151,20 +153,20 @@ public class Main extends javax.swing.JFrame {
 		jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		jLabel3.setText("Danh sách xe có sẵn");
+		jLabel3.setText("Danh sach xe co san");
 
 		jTable5.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null }
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null }
 				},
 				new String[] {
-						"Loại", "Mã xe", "Tên xe", "Chi tiết xe"
+						"Loai", "Ma xe", "Chi tiet xe"
 				}) {
 			Class[] types = new Class[] {
-					java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+					java.lang.String.class, java.lang.String.class, java.lang.String.class
 			};
 
 			public Class getColumnClass(int columnIndex) {
@@ -201,20 +203,20 @@ public class Main extends javax.swing.JFrame {
 		jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		jLabel4.setText("Danh sách xe đã đặt trước");
+		jLabel4.setText("Danh sach xe da dat truoc");
 
 		jTable6.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null }
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null }
 				},
 				new String[] {
-						"Mã xe", "Loại xe", "Tên xe", "Chi tiết xe"
+						"Loai", "Ma xe", "Chi tiet xe"
 				}) {
 			Class[] types = new Class[] {
-					java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+					java.lang.String.class, java.lang.String.class, java.lang.String.class
 			};
 
 			public Class getColumnClass(int columnIndex) {
@@ -252,7 +254,7 @@ public class Main extends javax.swing.JFrame {
 		jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel1.setText("Thông tin khách hàng");
+		jLabel1.setText("Thong tin khach hang");
 
 		jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		jLabel2.setText("Name:");
@@ -349,7 +351,7 @@ public class Main extends javax.swing.JFrame {
 		jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel11.setText("Khu vực trạng thái:");
+		jLabel11.setText("Khu vuc trang thai:");
 
 		jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		jLabel12.setForeground(new java.awt.Color(255, 51, 51));
@@ -380,7 +382,7 @@ public class Main extends javax.swing.JFrame {
 		jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jButton3.setBackground(new java.awt.Color(153, 255, 255));
-		jButton3.setText("Huỷ đặt chỗ");
+		jButton3.setText("Huy dat cho");
 		jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 		jButton3.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -397,12 +399,14 @@ public class Main extends javax.swing.JFrame {
 		});
 
 		jButton2.setBackground(new java.awt.Color(153, 255, 255));
-		jButton2.setText("Đặt chỗ");
+		jButton2.setText("Dat cho");
 		jButton2.setName("btnDatCho"); // NOI18N
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				try {
+
 					jButton2ActionPerformed(evt);
+
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -410,7 +414,7 @@ public class Main extends javax.swing.JFrame {
 		});
 
 		jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel13.setText("Khu vực thực hiện lệnh:");
+		jLabel13.setText("Khu vuc lenh");
 
 		javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
 		jPanel14.setLayout(jPanel14Layout);
@@ -477,26 +481,26 @@ public class Main extends javax.swing.JFrame {
 								.addContainerGap(17, Short.MAX_VALUE)));
 
 		jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel10.setText("Khu vực lệnh");
+		jLabel10.setText("Khu vuc lenh:");
 
 		jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel14.setText("Danh sách các xe đã đặt:");
+		jLabel14.setText("Danh sach khach hang da dat truoc");
 
 		jTable2.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null, null, null, null, null, null },
-						{ null, null, null, null, null, null, null, null },
-						{ null, null, null, null, null, null, null, null },
-						{ null, null, null, null, null, null, null, null }
+						{ null, null, null, null, null, null, null },
+						{ null, null, null, null, null, null, null },
+						{ null, null, null, null, null, null, null },
+						{ null, null, null, null, null, null, null }
 				},
 				new String[] {
-						"Mã xe", "Loại xe", "Tên xe", "Chi tiết xe", "Ngày đặt", "Thời gian", "Tên khách hàng", "Phone"
+						"Loai", "Ma xe", "Chi tiet xe", "Ngay dat", "Thoi gian", "Ten khach hang", "Phone"
 				}) {
 			Class[] types = new Class[] {
 					java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
-					java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class
+					java.lang.String.class, java.lang.String.class, java.lang.Object.class
 			};
 
 			public Class getColumnClass(int columnIndex) {
@@ -512,7 +516,7 @@ public class Main extends javax.swing.JFrame {
 						.addComponent(jScrollPane2)
 						.addGroup(jPanel15Layout.createSequentialGroup()
 								.addContainerGap()
-								.addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 182,
+								.addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 255,
 										javax.swing.GroupLayout.PREFERRED_SIZE)
 								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 		jPanel15Layout.setVerticalGroup(
@@ -583,14 +587,14 @@ public class Main extends javax.swing.JFrame {
 										javax.swing.GroupLayout.PREFERRED_SIZE)
 								.addGap(0, 0, Short.MAX_VALUE)));
 
-		jTabbedPane1.addTab("Đặt trước", jPanel2);
+		jTabbedPane1.addTab("Dat truoc", jPanel2);
 
 		jPanel11.setBorder(new javax.swing.border.MatteBorder(null));
 
 		jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		jLabel5.setText("Danh sách đã đặt trước");
+		jLabel5.setText("Danh sach xe co san");
 
 		jTable7.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
@@ -600,7 +604,7 @@ public class Main extends javax.swing.JFrame {
 						{ null, null, null, null }
 				},
 				new String[] {
-						"Loại", "Mã xe", "Tên xe", "Chi tiết xe"
+						"Loai", "Ma xe", "Ten xe", "Chi tiet xe"
 				}));
 		jTable7.setName("listXeCoSan"); // NOI18N
 		jScrollPane7.setViewportView(jTable7);
@@ -631,7 +635,7 @@ public class Main extends javax.swing.JFrame {
 		jPanel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		jLabel15.setText("Danh sách xe đã đặt trước");
+		jLabel15.setText("Danh sach xe da dat truoc");
 
 		jTable9.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
@@ -641,7 +645,7 @@ public class Main extends javax.swing.JFrame {
 						{ null, null, null, null }
 				},
 				new String[] {
-						"Mã xe", "Loại xe", "Tên xe", "Chi tiết xe"
+						"Ma xe", "Loai xe", "Ten xe", "Chi tiet xe"
 				}));
 		jTable9.setName("listXe"); // NOI18N
 		jScrollPane9.setViewportView(jTable9);
@@ -677,7 +681,7 @@ public class Main extends javax.swing.JFrame {
 		jPanel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel16.setText("Thông tin khách hàng");
+		jLabel16.setText("Thong tin khach hang");
 
 		jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		jLabel17.setText("Name:");
@@ -774,7 +778,7 @@ public class Main extends javax.swing.JFrame {
 		jPanel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel21.setText("Khu vực trạng thái:");
+		jLabel21.setText("Khu vuc trang thai");
 
 		jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		jLabel22.setForeground(new java.awt.Color(255, 51, 51));
@@ -805,7 +809,7 @@ public class Main extends javax.swing.JFrame {
 		jPanel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
 		jButton5.setBackground(new java.awt.Color(153, 255, 255));
-		jButton5.setText("Huỷ đặt chỗ");
+		jButton5.setText("Huy dat cho");
 		jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 		jButton5.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -822,7 +826,7 @@ public class Main extends javax.swing.JFrame {
 		});
 
 		jButton7.setBackground(new java.awt.Color(153, 255, 255));
-		jButton7.setText("Đặt chỗ");
+		jButton7.setText("Dat cho");
 		jButton7.setName("btnDatCho"); // NOI18N
 		jButton7.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -831,7 +835,7 @@ public class Main extends javax.swing.JFrame {
 		});
 
 		jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel23.setText("Khu vực thực hiện lệnh:");
+		jLabel23.setText("Khu vuc lenh:");
 
 		javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
 		jPanel23.setLayout(jPanel23Layout);
@@ -898,7 +902,7 @@ public class Main extends javax.swing.JFrame {
 								.addContainerGap(17, Short.MAX_VALUE)));
 
 		jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel24.setText("Khu vực lệnh");
+		jLabel24.setText("Khu vuc lenh");
 
 		javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
 		jPanel11.setLayout(jPanel11Layout);
@@ -974,7 +978,7 @@ public class Main extends javax.swing.JFrame {
 												javax.swing.GroupLayout.PREFERRED_SIZE)
 										.addGap(0, 0, Short.MAX_VALUE))));
 
-		jTabbedPane1.addTab("Cho thuê", jPanel3);
+		jTabbedPane1.addTab("Cho thue", jPanel3);
 
 		jButton1.setText("Bạn có muốn thoát ct không");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -1000,7 +1004,7 @@ public class Main extends javax.swing.JFrame {
 										javax.swing.GroupLayout.PREFERRED_SIZE)
 								.addContainerGap(542, Short.MAX_VALUE)));
 
-		jTabbedPane1.addTab("Thoát", jPanel1);
+		jTabbedPane1.addTab("Thoat", jPanel1);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
@@ -1057,6 +1061,10 @@ public class Main extends javax.swing.JFrame {
 	}
 
 	public void initData() {
+		DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
+		DefaultTableModel model2 = (DefaultTableModel) jTable6.getModel();
+		model.setRowCount(0);
+		model2.setRowCount(0);
 		jTable5.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		jTable6.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		for (Object object : controller.listCars) {
@@ -1068,17 +1076,18 @@ public class Main extends javax.swing.JFrame {
 	}
 
 	private void resetForm() {
-		controller.init();
 		jTextField1.setText("");
 		jTextField2.setText("");
 		jDateChooser1.setDate(null);
 		jLabel12.setText("");
+		jTextField3.setText("");
 		jTable5.clearSelection();
 		// clear data
 		DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
 		DefaultTableModel model2 = (DefaultTableModel) jTable6.getModel();
 		model.setRowCount(0);
 		model2.setRowCount(0);
+		controller.init();
 		// add data
 		for (Object obj : controller.listCars) {
 			controller.addCarToTable(jTable5, (Car) obj);
@@ -1092,16 +1101,16 @@ public class Main extends javax.swing.JFrame {
 		// get multiple data select from jTable5
 		int[] rows = jTable5.getSelectedRows();
 		if (rows.length == 0) {
-			JOptionPane.showMessageDialog(null, "Bạn chưa chọn xe");
+			JOptionPane.showMessageDialog(null, "Ban chua chon xe nao");
 			return;
 		}
 		jTable5.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		jTable6.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		ArrayList<String> data = new ArrayList<String>();
-		for (int i = 0; i < rows.length; i++) {
-			data.add(jTable5.getValueAt(rows[i], 0).toString());
-		}
-		System.out.println(data);
+		// ArrayList<String> data = new ArrayList<String>();
+		// for (int i = 0; i < rows.length; i++) {
+		// data.add(jTable5.getValueAt(rows[i], 0).toString());
+		// }
+		String idSelector = jTable5.getValueAt(rows[0], 0).toString();
 		String nameCustomer = jTextField1.getText();
 		String phoneCustomer = jTextField2.getText();
 		String dateCustomer = String.valueOf(jDateChooser1.getDate());
@@ -1114,21 +1123,24 @@ public class Main extends javax.swing.JFrame {
 			e.printStackTrace();
 		}
 		if (nameCustomer.equals("") || phoneCustomer.equals("") || dateCustomer.equals("") || timeRental.equals("")) {
-			JOptionPane.showMessageDialog(null, "Bạn chưa nhập đủ thông tin");
+			JOptionPane.showMessageDialog(null, "Ban chua nhap du thong tin");
 			return;
 		}
 		Customer customer = new Customer(nameCustomer, phoneCustomer);
 		try {
-			for (String id : data) {
-				Object car = controller.findCar(controller.listCars, id);
-				Rental rental = new Rental(car, customer, date, timeRental);
-				controller.reservation(rental);
-			}
+			// for (String id : data) {
+			// Object car = controller.findCar(controller.listCars, id);
+			// Rental rental = new Rental(car, customer, date, timeRental);
+			// controller.reservation(rental, car);
+			// }
+			Object car = controller.findCar(controller.listCars, idSelector);
+			Rental rental = new Rental(car, customer, date, timeRental);
+			controller.reservation(rental, car);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		JOptionPane.showMessageDialog(null, "Bạn đã đặt phòng thành công");
-		jLabel12.setText("Bạn đã đặt phòng thành công");
+		JOptionPane.showMessageDialog(null, "Dan da dat truoc thanh cong");
+		jLabel12.setText("Ban da dat thanh cong");
 		resetForm();
 	}// GEN-LAST:event_jButton2ActionPerformed
 

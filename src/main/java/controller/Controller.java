@@ -22,6 +22,9 @@ public class Controller {
   }
 
   public void init() {
+    listRental.clear();
+    listCars.clear();
+    listRentalCustomers.clear();
     model.initCars(listCars, "./Cars.txt");
     model.initCars(listRental, "./Rental.txt");
     model.initListRentalCustomer(listRentalCustomers);
@@ -43,8 +46,8 @@ public class Controller {
   }
 
   public Object findCar(ArrayList<Object> list, String id) {
-    for (int i = 0; i < list.size(); i++) {
-      Car car = (Car) list.get(i);
+    for (Object obj : list) {
+      Car car = (Car) obj;
       if (car.getId().equals(id)) {
         return car;
       }
@@ -52,10 +55,11 @@ public class Controller {
     return null;
   }
 
-  public void reservation(Rental rental) throws Exception {
-    listRental.add(rental);
-    deleteId(listCars, ((Car) rental.getCar()).getId());
-    model.writeFile(listRental, "./Rental.txt", false);
+  public void reservation(Rental rental, Object car) throws Exception {
+    listRental.add(car);
+    listRentalCustomers.add(rental);
+    deleteId(listCars, ((Car) car).getId());
+    model.writeFile(listRentalCustomers, "./Rental.txt", false);
     model.writeFile(listCars, "./Cars.txt", false);
   }
 }

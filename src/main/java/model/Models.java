@@ -3,8 +3,6 @@ package model;
 import java.util.*;
 import java.io.*;
 import java.text.*;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 
 public class Models {
 
@@ -20,9 +18,9 @@ public class Models {
         String line = sc.nextLine();
         String[] arr = line.split("_");
         String type = arr[0].toUpperCase().replaceAll("\\d", "");
-        String id = arr[1];
-        String name = arr[2];
-        String capacity = arr[3];
+        String id = arr[0];
+        String name = arr[1];
+        String capacity = arr[2];
         switch (type) {
           case "CAR":
             Carx car = new Carx(id, name, capacity);
@@ -84,10 +82,8 @@ public class Models {
           date = new SimpleDateFormat("dd/MM/yyyy").parse(stringDate);
         } catch (ParseException e) {
           e.printStackTrace();
-          System.err.println("Loi 1");
         } catch (Exception e) {
           System.out.println(e);
-          System.err.println("Loi 2");
         }
         list.add(new Rental(car, customer, date, timeRental));
 
