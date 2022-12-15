@@ -220,8 +220,8 @@
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="3" rowCount="4">
                                 <Column editable="true" title="Loai" type="java.lang.String"/>
-                                <Column editable="true" title="Ma xe" type="java.lang.String"/>
-                                <Column editable="true" title="Chi tiet xe" type="java.lang.String"/>
+                                <Column editable="true" title="Bien so" type="java.lang.String"/>
+                                <Column editable="true" title="Ma luc" type="java.lang.String"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -309,8 +309,8 @@
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="3" rowCount="4">
                                 <Column editable="true" title="Loai" type="java.lang.String"/>
-                                <Column editable="true" title="Ma xe" type="java.lang.String"/>
-                                <Column editable="true" title="Chi tiet xe" type="java.lang.String"/>
+                                <Column editable="true" title="Bien so" type="java.lang.String"/>
+                                <Column editable="true" title="Ma luc" type="java.lang.String"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -727,8 +727,8 @@
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="7" rowCount="4">
                                 <Column editable="true" title="Loai" type="java.lang.String"/>
-                                <Column editable="true" title="Ma xe" type="java.lang.String"/>
-                                <Column editable="true" title="Chi tiet xe" type="java.lang.String"/>
+                                <Column editable="true" title="Bien so" type="java.lang.String"/>
+                                <Column editable="true" title="Ma luc" type="java.lang.String"/>
                                 <Column editable="true" title="Ngay dat" type="java.lang.String"/>
                                 <Column editable="true" title="Thoi gian" type="java.lang.String"/>
                                 <Column editable="true" title="Ten khach hang" type="java.lang.String"/>
@@ -949,20 +949,14 @@
                             <Component class="javax.swing.JTable" name="jTable7">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="4" rowCount="4">
+                                  <Table columnCount="3" rowCount="4">
                                     <Column editable="true" title="Loai" type="java.lang.Object"/>
-                                    <Column editable="true" title="Ma xe" type="java.lang.Object"/>
-                                    <Column editable="true" title="Ten xe" type="java.lang.Object"/>
-                                    <Column editable="true" title="Chi tiet xe" type="java.lang.Object"/>
+                                    <Column editable="true" title="Bien so" type="java.lang.Object"/>
+                                    <Column editable="true" title="Ma luc" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                   <TableColumnModel selectionModel="0">
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
                                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>
@@ -1049,20 +1043,14 @@
                             <Component class="javax.swing.JTable" name="jTable9">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="4" rowCount="4">
-                                    <Column editable="true" title="Ma xe" type="java.lang.Object"/>
+                                  <Table columnCount="3" rowCount="4">
                                     <Column editable="true" title="Loai xe" type="java.lang.Object"/>
-                                    <Column editable="true" title="Ten xe" type="java.lang.Object"/>
-                                    <Column editable="true" title="Chi tiet xe" type="java.lang.Object"/>
+                                    <Column editable="true" title="Bien so" type="java.lang.Object"/>
+                                    <Column editable="true" title="Ma luc" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                   <TableColumnModel selectionModel="0">
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
                                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>

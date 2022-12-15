@@ -1,9 +1,7 @@
-Car1_asdasdad_500_Economy Car
-Car2_JH23131312_1500_Small Car
 Car3_HK1313211_2500_Premium Car
-Suv2_KJH3123131_160_Small Suv
 Suv3_KJH31321331_260_Premium Car
 Suv4_KJH3331_360_Luxury Car
 Truck1_GG3123131_1_Large Truck
 Truck2_D131_3_Medium Truck
 Truck3_D131_5_Small Truck
+Car1_Kh2e321312_500_Economy Car

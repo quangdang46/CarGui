@@ -53,6 +53,8 @@ public class Main extends javax.swing.JFrame {
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
@@ -162,10 +164,13 @@ public class Main extends javax.swing.JFrame {
 
 		jTable5.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-	
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null }
 				},
 				new String[] {
-						"Loai", "Ma xe", "Chi tiet xe"
+						"Loai", "Bien so", "Ma luc"
 				}) {
 			Class[] types = new Class[] {
 					java.lang.String.class, java.lang.String.class, java.lang.String.class
@@ -209,9 +214,13 @@ public class Main extends javax.swing.JFrame {
 
 		jTable6.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null }
 				},
 				new String[] {
-						"Loai", "Ma xe", "Chi tiet xe"
+						"Loai", "Bien so", "Ma luc"
 				}) {
 			Class[] types = new Class[] {
 					java.lang.String.class, java.lang.String.class, java.lang.String.class
@@ -476,9 +485,13 @@ public class Main extends javax.swing.JFrame {
 
 		jTable2.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
+						{ null, null, null, null, null, null, null },
+						{ null, null, null, null, null, null, null },
+						{ null, null, null, null, null, null, null },
+						{ null, null, null, null, null, null, null }
 				},
 				new String[] {
-						"Loai", "Ma xe", "Chi tiet xe", "Ngay dat", "Thoi gian", "Ten khach hang", "Phone"
+						"Loai", "Bien so", "Ma luc", "Ngay dat", "Thoi gian", "Ten khach hang", "Phone"
 				}) {
 			Class[] types = new Class[] {
 					java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
@@ -580,13 +593,13 @@ public class Main extends javax.swing.JFrame {
 
 		jTable7.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null }
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null }
 				},
 				new String[] {
-						"Loai", "Ma xe", "Ten xe", "Chi tiet xe"
+						"Loai", "Bien so", "Ma luc"
 				}));
 		jTable7.setName("listXeCoSan"); // NOI18N
 		jScrollPane7.setViewportView(jTable7);
@@ -621,13 +634,13 @@ public class Main extends javax.swing.JFrame {
 
 		jTable9.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null },
-						{ null, null, null, null }
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null },
+						{ null, null, null }
 				},
 				new String[] {
-						"Ma xe", "Loai xe", "Ten xe", "Chi tiet xe"
+						"Loai xe", "Bien so", "Ma luc"
 				}));
 		jTable9.setName("listXe"); // NOI18N
 		jScrollPane9.setViewportView(jTable9);
@@ -1038,6 +1051,7 @@ public class Main extends javax.swing.JFrame {
 			jButton5.setEnabled(false);
 			return;
 		}
+		jButton5.setEnabled(true);
 		// dialog yes no ban co muon thue khong
 		int dialogResult = JOptionPane.showConfirmDialog(this, "Bạn có muốn thuê không?");
 		if (dialogResult == JOptionPane.YES_OPTION) {
@@ -1067,6 +1081,7 @@ public class Main extends javax.swing.JFrame {
 			jButton7.setEnabled(false);
 			return;
 		}
+		jButton7.setEnabled(true);
 		int dialogResult = JOptionPane.showConfirmDialog(this, "Bạn có muốn huỷ thuê không?");
 		if (dialogResult == JOptionPane.YES_OPTION) {
 			int[] rows = jTable9.getSelectedRows();
@@ -1107,6 +1122,7 @@ public class Main extends javax.swing.JFrame {
 			jButton3.setEnabled(false);
 			return;
 		}
+		jButton3.setEnabled(true);
 		int dialogResult = JOptionPane.showConfirmDialog(null, "Bạn có muốn trả xe không");
 		if (dialogResult == JOptionPane.YES_OPTION) {
 			int[] rows = jTable2.getSelectedRows();
@@ -1222,6 +1238,7 @@ public class Main extends javax.swing.JFrame {
 			jButton2.setEnabled(false);
 			return;
 		}
+		jButton2.setEnabled(true);
 		// get multiple data select from jTable5
 		int[] rows = jTable5.getSelectedRows();
 		if (rows.length == 0) {
@@ -1243,6 +1260,7 @@ public class Main extends javax.swing.JFrame {
 		try {
 			date = formatter.parse(dateCustomer);
 		} catch (ParseException e) {
+			System.out.println("Error:");
 		}
 		if (nameCustomer.equals("") || phoneCustomer.equals("") || dateCustomer.equals("") || timeRental.equals("")) {
 			JOptionPane.showMessageDialog(null, "Ban chua nhap du thong tin");
