@@ -47,7 +47,6 @@ public class Controller {
   public void deleteId(ArrayList<Object> list, String id) {
     for (int i = 0; i < list.size(); i++) {
       Car car = (Car) list.get(i);
-      System.out.println(car.getId());
       if (car.getId().equals(id)) {
         list.remove(i);
         break;
@@ -65,6 +64,17 @@ public class Controller {
     return null;
   }
 
+  public void deleteRental(String id) {
+    for (int i = 0; i < listRentalCustomers.size(); i++) {
+      Rental rental = (Rental) listRentalCustomers.get(i);
+      System.out.println(rental.getId());
+      if (rental.getId().equals(id)) {
+        listRentalCustomers.remove(i);
+        break;
+      }
+    }
+  }
+
   public void reservation(Rental rental, Object car) throws Exception {
     listRental.add(car);
     listRentalCustomers.add(rental);
@@ -72,4 +82,14 @@ public class Controller {
     model.writeFile(listRentalCustomers, "./Rental.txt", false);
     model.writeFile(listCars, "./Cars.txt", false);
   }
+
+  public void returnCar(String id) throws Exception {
+    Object car = findCar(listRental, id);
+    listCars.add(car);
+    deleteRental(id);
+    deleteId(listRental, id);
+    model.writeFile(listRentalCustomers, "./Rental.txt", true);
+    model.writeFile(listCars, "./Cars.txt", false);
+  }
+
 }

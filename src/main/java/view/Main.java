@@ -1047,11 +1047,30 @@ public class Main extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton1ActionPerformed
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
-		// TODO add your handling code here:
+		int dialogResult = JOptionPane.showConfirmDialog(null, "Bạn có muốn trả xe không");
+		if (dialogResult == JOptionPane.YES_OPTION) {
+			int[] rows = jTable2.getSelectedRows();
+			System.out.println(rows.length);
+			if (rows.length == 0) {
+				JOptionPane.showMessageDialog(null, "Bạn chưa chọn dòng nào để xóa");
+			}
+			// Saving code here
+			String idSelector = jTable2.getValueAt(rows[0], 0).toString();
+			try {
+				controller.returnCar(idSelector);
+				JOptionPane.showMessageDialog(null, "Trả xe thành công");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			JOptionPane.showMessageDialog(null, "Ban da huy tra xe");
+		}
+		resetForm();
+
 	}// GEN-LAST:event_jButton3ActionPerformed
 
 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed
-		// TODO add your handling code here:
 	}// GEN-LAST:event_jButton4ActionPerformed
 
 	public void init() {
