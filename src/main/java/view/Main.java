@@ -52,6 +52,7 @@ public class Main extends javax.swing.JFrame {
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
@@ -161,10 +162,7 @@ public class Main extends javax.swing.JFrame {
 
 		jTable5.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null },
-						{ null, null, null },
-						{ null, null, null },
-						{ null, null, null }
+	
 				},
 				new String[] {
 						"Loai", "Ma xe", "Chi tiet xe"
@@ -211,10 +209,6 @@ public class Main extends javax.swing.JFrame {
 
 		jTable6.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null },
-						{ null, null, null },
-						{ null, null, null },
-						{ null, null, null }
 				},
 				new String[] {
 						"Loai", "Ma xe", "Chi tiet xe"
@@ -482,10 +476,6 @@ public class Main extends javax.swing.JFrame {
 
 		jTable2.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-						{ null, null, null, null, null, null, null },
-						{ null, null, null, null, null, null, null },
-						{ null, null, null, null, null, null, null },
-						{ null, null, null, null, null, null, null }
 				},
 				new String[] {
 						"Loai", "Ma xe", "Chi tiet xe", "Ngay dat", "Thoi gian", "Ten khach hang", "Phone"
@@ -590,9 +580,13 @@ public class Main extends javax.swing.JFrame {
 
 		jTable7.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
+						{ null, null, null, null },
+						{ null, null, null, null },
+						{ null, null, null, null },
+						{ null, null, null, null }
 				},
 				new String[] {
-						"Loai", "Ma xe", "Ten xe"
+						"Loai", "Ma xe", "Ten xe", "Chi tiet xe"
 				}));
 		jTable7.setName("listXeCoSan"); // NOI18N
 		jScrollPane7.setViewportView(jTable7);
@@ -627,10 +621,13 @@ public class Main extends javax.swing.JFrame {
 
 		jTable9.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
-
+						{ null, null, null, null },
+						{ null, null, null, null },
+						{ null, null, null, null },
+						{ null, null, null, null }
 				},
 				new String[] {
-						"Ma xe", "Loai xe", "Ten xe"
+						"Ma xe", "Loai xe", "Ten xe", "Chi tiet xe"
 				}));
 		jTable9.setName("listXe"); // NOI18N
 		jScrollPane9.setViewportView(jTable9);
@@ -953,6 +950,8 @@ public class Main extends javax.swing.JFrame {
 
 		jTabbedPane1.addTab("Cho thue", jPanel3);
 
+		jButton1.setBackground(new java.awt.Color(102, 255, 255));
+		jButton1.setForeground(new java.awt.Color(255, 51, 0));
 		jButton1.setText("Bạn có muốn thoát ct không");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1010,7 +1009,6 @@ public class Main extends javax.swing.JFrame {
 			isSelected = jTable9.getValueAt(rows2[0], 0).toString();
 			rental = controller.findRental(isSelected, controller.listReceive);
 		}
-		System.out.println(isSelected);
 		// String idSelected = jTable7.getValueAt(rows[0], 0).toString();
 
 		// Rental rental = controller.findRental(isSelected,
@@ -1081,7 +1079,6 @@ public class Main extends javax.swing.JFrame {
 			} catch (Exception e) {
 				// TODO: handle exception
 				JOptionPane.showMessageDialog(this, "Lỗi");
-				return;
 			}
 			// yes option
 			JOptionPane.showMessageDialog(this, "Bạn đã huỷ thuê thành công");
@@ -1095,7 +1092,14 @@ public class Main extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton7ActionPerformed
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-		// TODO add your handling code here:
+		// exit
+		int dialogResult = JOptionPane.showConfirmDialog(this, "Bạn có muốn thoát không?");
+		if (dialogResult == JOptionPane.YES_OPTION) {
+			System.exit(0);
+		} else {
+			// no option
+			JOptionPane.showMessageDialog(this, "Bạn đã hủy thoát");
+		}
 	}// GEN-LAST:event_jButton1ActionPerformed
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
@@ -1116,8 +1120,6 @@ public class Main extends javax.swing.JFrame {
 				JOptionPane.showMessageDialog(null, "Trả xe thành công");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
-				return;
 
 			}
 		} else {
@@ -1224,7 +1226,6 @@ public class Main extends javax.swing.JFrame {
 		int[] rows = jTable5.getSelectedRows();
 		if (rows.length == 0) {
 			JOptionPane.showMessageDialog(null, "Ban chua chon xe nao");
-			return;
 		}
 		jTable5.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		jTable6.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -1242,7 +1243,6 @@ public class Main extends javax.swing.JFrame {
 		try {
 			date = formatter.parse(dateCustomer);
 		} catch (ParseException e) {
-			e.printStackTrace();
 		}
 		if (nameCustomer.equals("") || phoneCustomer.equals("") || dateCustomer.equals("") || timeRental.equals("")) {
 			JOptionPane.showMessageDialog(null, "Ban chua nhap du thong tin");
@@ -1259,9 +1259,6 @@ public class Main extends javax.swing.JFrame {
 			Rental rental = new Rental(car, customer, date, timeRental);
 			controller.reservation(rental, car);
 		} catch (Exception e) {
-			// TODO: handle exception
-			return;
-
 		}
 		JOptionPane.showMessageDialog(null, "Dan da dat truoc thanh cong");
 		jLabel12.setText("Ban da dat thanh cong");
